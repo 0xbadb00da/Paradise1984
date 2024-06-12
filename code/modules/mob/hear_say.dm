@@ -80,7 +80,7 @@
 	if(!client)
 		return 0
 
-	var/is_whisper = verb == "whispers"
+	var/is_whisper = (findtext(verb, "whispers") > 0)
 
 	if(isobserver(src) && client.prefs.toggles & PREFTOGGLE_CHAT_GHOSTEARS)
 		if(speaker && !speaker.client && !(speaker in view(src)))
